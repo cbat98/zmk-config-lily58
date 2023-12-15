@@ -26,6 +26,26 @@
             quick-tap-ms = <200>;
             require-prior-idle-ms = <75>;
         };
+
+        game_LO {
+            compatible = "zmk,behaviour-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &tog GAME>
+                , <&macro_tap &sl LO>
+                , <&macro_tap &tog GAME>
+                ;
+        };
+
+        game_HI {
+            compatible = "zmk,behaviour-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &tog GAME>
+                , <&macro_tap &sl HI>
+                , <&macro_tap &tog GAME>
+                ;
+        };
     };
 
     keymap {
@@ -87,11 +107,11 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                     | ALT  | GUI  |  LO  |  SPACE |  | ENTER |  HI  | BSPC  | GUI   |
             bindings = <
-&kp ESC    &kp N1  &kp N2   &kp N3   &kp N4   &kp N5                    &kp N6  &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
-&kp TAB    &kp Q   &kp W    &kp E    &kp R    &kp T                     &kp Y   &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&kp LCTRL  &kp A   &kp S    &kp D    &kp F    &kp G                     &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp LSHFT  &kp Z   &kp X    &kp C    &kp V    &kp B  &kp LBKT  &kp RBKT &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RPAR
-                            &kp LALT &kp LGUI &mo LO &kp SPACE &kp RET  &mo HI  &kp BSPC &tog GAME
+&kp ESC    &kp N1  &kp N2   &kp N3   &kp N4   &kp N5                      &kp N6   &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
+&kp TAB    &kp Q   &kp W    &kp E    &kp R    &kp T                       &kp Y    &kp U    &kp I     &kp O   &kp P    &kp MINUS
+&kp LCTRL  &kp A   &kp S    &kp D    &kp F    &kp G                       &kp H    &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp LSHFT  &kp Z   &kp X    &kp C    &kp V    &kp B    &kp LBKT  &kp RBKT &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH &kp RPAR
+                            &kp LALT &kp LGUI &game_LO &kp SPACE &kp RET  &game_HI &kp BSPC &tog GAME
             >;
         };
     };
