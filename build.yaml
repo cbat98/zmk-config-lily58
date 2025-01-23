@@ -12,8 +12,8 @@
 #     shield: reviung41
 #
 ---
-include:g
-  - board: nice_nano_v2g
-    shield: lily58_leftg
-  - board: nice_nano_v2g
-    shield: lily58_rightg
+include:
+  - board: nice_nano_v2
+    shield: lily58_left
+  - board: nice_nano_v2
+    shield: lily58_right
